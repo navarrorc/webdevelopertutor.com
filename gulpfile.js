@@ -134,7 +134,11 @@ gulp.task("serve", function(){
         server: {baseDir: "_site"},
         port: process.env.PORT || 8080,
         ui: { port: 8081 },
-        ghostMode: false
+        ghostMode: false,
+        https: {
+            key: "/etc/letsencrypt/live/flexboxtv.com/privkey.pem",
+            cert: "/etc/letsencrypt/live/flexboxtv.com/cert.pem"
+        }
     };
     browserSync.init(options, function() { /* see: http://bit.ly/2std0F1 */ });    
 });
